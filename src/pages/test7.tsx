@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
-import HTMLParser from "html-to-json-parser";
 
-export default function test7() {
+export default function Test7() {
     const [html, setHtml] = useState("");
 
     useEffect(() => {
-        async function getJson(element: Element) {
-            const result = await HTMLParser(element);
-            console.log(result);
-        }
-
         document.addEventListener("paste", e => {
             // console.log(e.clipboardData?.getData('text/html'));
             const html = e.clipboardData?.getData("text/html");
@@ -21,7 +15,6 @@ export default function test7() {
             console.log([$doc]);
             console.log($trs[0]);
             // setHtml($trs[0].innerHTML)
-            // getJson($trs[0])
             const qwe = document.getElementById("qwe");
             if (!qwe) return;
             const d = qwe.getElementsByClassName("xl66")[0];

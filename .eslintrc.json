@@ -8,6 +8,12 @@
         "prettier/prettier": 1,
         "@typescript-eslint/consistent-type-imports": "error",
         "@typescript-eslint/no-non-null-assertion": "off",
-        "@next/next/no-img-element": "off"
+        "@next/next/no-img-element": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
     }
 }
