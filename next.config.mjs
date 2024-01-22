@@ -10,6 +10,7 @@ const nextConfig = {
             },
         ];
     },
+    transpilePackages: ["antd", "@ant-design/icons"],
 };
 
-module.exports = nextConfig;
+export default nextConfig;
