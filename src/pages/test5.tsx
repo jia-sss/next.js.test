@@ -24,7 +24,7 @@ export default function Test5() {
             const db = request.result;
             console.log("创建数据库成功");
             setObjectStore(
-                db.createObjectStore("myObjectStore", { keyPath: "id" })
+                db.createObjectStore("myObjectStore", { keyPath: "id" }),
             );
         };
     }, []);
@@ -40,20 +40,18 @@ export default function Test5() {
         };
     }
 
-    function updateObject(data: IData) {
-        const request = (db!.transaction(
-            ["myObjectStore"],
-            "readwrite"
-        ).request.onerror = function (event) {
-            console.log("更新数据失败");
-        });
-        request.onsuccess = function (event) {
-            console.log("更新数据成功");
-        };
-    }
+    // function updateObject(data: IData) {
+    //     const request = db!.transaction(["myObjectStore"], "readwrite");
+    //     request.onerror = function (event) {
+    //         console.log("更新数据失败");
+    //     };
+    //     request.onsuccess = function (event) {
+    //         console.log("更新数据成功");
+    //     };
+    // }
 
     // 读取对象存储空间中的数据
-    function readObject(id) {
+    function readObject(id: number) {
         const request = objectStore!.get(id);
         request.onerror = function (event) {
             console.log("读取数据失败");
@@ -78,7 +76,7 @@ export default function Test5() {
 
         // 更新数据
         myArray[1].age = 23;
-        updateObject(myArray[1]);
+        // updateObject(myArray[1]);
 
         // 读取数据
         readObject(2);

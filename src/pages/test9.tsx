@@ -13,7 +13,7 @@ export default function Test9() {
         const observer = new MutationObserver(() => {
             console.log("MutationObserver");
         });
-        observer.observe(ul, {
+        observer.observe(ul!, {
             childList: true,
         });
         return () => {
@@ -50,7 +50,7 @@ export default function Test9() {
                                     <div>
                                         <span>123</span>
                                         <Button
-                                            size="mini"
+                                            size="small"
                                             onClick={() => {
                                                 // navigate(
                                                 //     `/flowchart/${item.tracingId}`,
